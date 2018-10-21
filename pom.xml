@@ -6,6 +6,7 @@
 
     <groupId>ch.rgunti.java</groupId>
     <artifactId>rgunti-java-commons-parent</artifactId>
+    <name>rGunti Java Commons Parent</name>
     <packaging>pom</packaging>
     <version>0.1</version>
     <modules>
