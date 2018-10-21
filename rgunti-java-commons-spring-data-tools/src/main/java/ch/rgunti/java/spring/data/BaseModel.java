@@ -11,22 +11,28 @@ import java.time.LocalDateTime;
 @EntityListeners({AuditingEntityListener.class})
 public abstract class BaseModel implements EntityObject {
 
+    // -- Column Names
+    public static final String COLUMN_ID = "id";
+    protected static final String COLUMN_VERSION = "version";
+    protected static final String COLUMN_CREATED_AT = "created_at";
+    protected static final String COLUMN_MODIFIED_AT = "modified_at";
+
     // -- Columns
 
     @Id
-    @Column(name = "id")
+    @Column(name = COLUMN_ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="version", nullable = false)
+    @Column(name=COLUMN_VERSION, nullable = false)
     @Version
     private Long version;
 
-    @Column(name="created_at", nullable = false)
+    @Column(name=COLUMN_CREATED_AT, nullable = false)
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @Column(name="modified_at", nullable = false)
+    @Column(name=COLUMN_MODIFIED_AT, nullable = false)
     @LastModifiedDate
     private LocalDateTime modifiedAt;
 
