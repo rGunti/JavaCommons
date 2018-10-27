@@ -30,11 +30,11 @@ public abstract class BaseModel implements EntityObject {
 
     @Column(name=COLUMN_CREATED_AT, nullable = false)
     @CreatedDate
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name=COLUMN_MODIFIED_AT, nullable = false)
     @LastModifiedDate
-    private LocalDateTime modifiedAt;
+    private LocalDateTime modifiedAt = LocalDateTime.now();
 
     // -- Properties
 
